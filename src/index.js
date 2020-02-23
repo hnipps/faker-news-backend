@@ -25,7 +25,13 @@ type Link {
 // 2
 const resolvers = {
   Query: {
-    info: () => null
+    info: () => `This is the API of a Hackernews Clone`,
+    feed: () => links
+  },
+  Link: {
+    id: parent => parent.id,
+    description: parent => parent.description,
+    url: parent => parent.url
   }
 };
 
